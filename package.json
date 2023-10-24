@@ -1,0 +1,8 @@
+{
+  "name": "media-converter-api",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "repository": "https://github.com/komelt/media-converter-api",
+  "author": "Tilen Komel",
+  "license": "GNU GENERAL PUBLIC LICENSE Version 3"
+}
