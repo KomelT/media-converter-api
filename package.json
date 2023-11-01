@@ -9,7 +9,7 @@
   },
   "repository": "https://github.com/komelt/media-converter-api",
   "author": "Tilen Komel",
-  "license": "GNU GENERAL PUBLIC LICENSE Version 3",
+  "license": "AGPL-3.0-or-later",
   "type": "module",
   "devDependencies": {
     "@types/express": "^4.17.20",
