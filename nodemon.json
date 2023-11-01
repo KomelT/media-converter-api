@@ -1,7 +1,7 @@
 {
-  "verbose": true,
-  "ignore": ["./dist/*"],
-  "execMap": {
-    "ts": "ts-node"
-  }
+    "verbose": true,
+    "ignore": ["./dist/*"],
+    "execMap": {
+        "ts": "ts-node"
+    }
 }
