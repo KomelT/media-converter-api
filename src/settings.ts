@@ -10,8 +10,8 @@ if (!process.env.AUTHORIZED_API_KEYS) throw new Error("AUTHORIZED_API_KEYS envir
         if (typeof item.name != "string") throw new Error(`AUTHORIZED_API_KEYS[${key}].name must be a string!`)
         if (typeof item.secret != "string") throw new Error(`AUTHORIZED_API_KEYS[${key}].secret must be a string!`)
         if (typeof item.description != "string") throw new Error(`AUTHORIZED_API_KEYS[${key}].description must be a string!`)
-        if (key.length >= 20) throw new Error(`AUTHORIZED_API_KEYS[${key}] must be long at least 10 characters!`)
-        if (item.secret.length >= 30) throw new Error(`AUTHORIZED_API_KEYS[${key}].secret must be long at least 30 characters!`)
+        if (key.length < 20) throw new Error(`AUTHORIZED_API_KEYS[${key}] must be long at least 20 characters!`)
+        if (item.secret.length < 30) throw new Error(`AUTHORIZED_API_KEYS[${key}].secret must be long at least 30 characters!`)
     }
 }
 export type AuthorizedApiKeysItem = {
