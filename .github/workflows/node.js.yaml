@@ -1,0 +1,34 @@
+name: Node.js CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install ffmpeg
+        run: sudo apt update && apt install -y ffmpeg
+
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18.x"
+
+      - name: "Install dependencies"
+        run: yarn
+        env:
+          AUTHORIZED_API_KEYS: "
+            apEB2LCKRFBfCT6aVfhv:
+            name: GitHub API Key
+            secret: 9sGVgFviB5k2KSxepbe432A9HoyYhT
+            description: API KEY used during GitHub CI
+            "
+
+      - name: "Build API"
+        run: yarn run build
+
+      - name: "Test"
+        run: npm test
