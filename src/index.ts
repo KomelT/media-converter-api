@@ -7,6 +7,10 @@ console.log(`
 |_|  |_|\\___|\\__,_|_|\\__,_|  \\_____\\___/|_| |_|\\_/ \\___|_|   \\__\\___|_|    /_/    \\_\\_|   |_____|
 `)
 
+import "./exithandler.js"
 import "./settings.js"
 import "./ffmpeg.js"
+import "./http.js"
 import "./express.js"
+
+import "./routes/hello.get.js"
