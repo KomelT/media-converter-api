@@ -1,3 +1,5 @@
-import ffmpeg from "ffmpeg"
+import ffmpeg from "fluent-ffmpeg"
 
-export default ffmpeg
+ffmpeg(`./dummy.jpg`).saveToFile("/tmp/ffmpeg-test.png").run()
+
+export default ffmpeg()
