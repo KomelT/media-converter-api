@@ -12,7 +12,7 @@ export async function authenticate(req: Request, res: Response, next: NextFuncti
 
     next()
   } catch (e: any) {
-    res.status(500)
+    res.status(500).json({ code: 500, message: "An internal error occured!" })
     console.log(e)
   }
 }
