@@ -1,4 +1,13 @@
 import Express from "express"
+import multer from "multer"
+
+declare global {
+  namespace Express {
+    export interface Request {
+      upload?: multer.Multer
+    }
+  }
+}
 
 export const express = Express()
 express.use(Express.json())
