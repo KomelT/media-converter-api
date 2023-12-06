@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from "express"
 import { express } from "../express.js"
 import { MulterError } from "multer"
-import { CustomError } from "./error.js"
+import { CustomError } from "../error.js"
 
 express.use((error: any, req: Request, res: Response, next: NextFunction) => {
   console.log(error)
