@@ -14,4 +14,5 @@ import "./http.js"
 import "./express.js"
 
 import "./routes/hello.get.js"
+import "./routes/photo.post.js"
 import "./routes/404.js"
