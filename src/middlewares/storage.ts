@@ -1,5 +1,5 @@
 import { storage, multer } from "../multer.js"
-import { CustomError } from "../routes/error.js"
+import { CustomError } from "../error.js"
 
 export const upload = multer({
   storage: storage,
