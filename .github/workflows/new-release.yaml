@@ -10,6 +10,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/core
 
       - name: Read package.json
         uses: dutscher/read-package-json-endpoint-actions@v1.33.7
