@@ -6,7 +6,7 @@ RUN apt-get install dcraw libraw-bin -y
 
 WORKDIR /var/app
 
-COPY package.json package-lock.json ./
+COPY . .
 
 RUN npm i
 
