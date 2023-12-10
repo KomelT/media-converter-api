@@ -6,6 +6,8 @@ services:
       dockerfile: dockerfile.dev
     env_file:
       - .env
+    ports:
+      - 8080:80
     volumes:
       - .:/var/app
       - /var/api/node_modules
