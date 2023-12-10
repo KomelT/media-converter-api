@@ -10,6 +10,8 @@ COPY package.json package-lock.json ./
 
 RUN npm i
 
+RUN npm run build
+
 EXPOSE 80
 
-CMD [ "npm", "run", "dev" ]
+CMD [ "npm", "run", "start" ]
