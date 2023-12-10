@@ -22,12 +22,6 @@ jobs:
 
       - name: "Install dependencies"
         run: npm i
-        env:
-          AUTHORIZED_API_KEYS: "
-            apEB2LCKRFBfCT6aVfhv:
-            name: GitHub API Key
-            description: API KEY used during GitHub CI
-            "
 
       - name: "Build API"
         run: npm run build
