@@ -13,15 +13,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Install packages
+        run: npm i
+
       - name: Read package.json
         uses: dutscher/read-package-json-endpoint-actions@v1.33.7
         id: package-json-endpoint
 
       - name: Create a release
-        id: create_release
-        uses: actions/create-release@v1
+        uses: action-pack/github-release@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: "${{ steps.package-json-endpoint.outputs.version }}"
-          release_name: "Release ${{ steps.package-json-endpoint.outputs.version }}"
+          tag: "${{ steps.package-json-endpoint.outputs.version }}"
+          title: "${{ steps.package-json-endpoint.outputs.version }}"
