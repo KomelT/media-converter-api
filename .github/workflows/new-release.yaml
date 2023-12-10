@@ -1,0 +1,26 @@
+name: Publish Release
+on:
+  push:
+    branches:
+      - "main"
+    tags:
+      - "v*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Read package.json
+        uses: dutscher/read-package-json-endpoint-actions@v1.33.7
+        id: package-json-endpoint
+
+      - name: Create a release
+        uses: action-pack/github-release@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag: "${{ steps.package-json-endpoint.outputs.version }}"
+          title: "${{ steps.package-json-endpoint.outputs.version }}"
