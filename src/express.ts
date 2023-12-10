@@ -1,4 +1,4 @@
-import Express from "express"
+import Express, { Request, Response, NextFunction } from "express"
 import multer from "multer"
 
 declare global {
@@ -14,3 +14,4 @@ express.use(Express.json())
 express.use(Express.urlencoded({ extended: true }))
 
 export default express
+export { Request, Response, NextFunction }

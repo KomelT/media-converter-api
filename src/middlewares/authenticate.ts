@@ -1,4 +1,4 @@
-import { Request, Response, NextFunction } from "express"
+import { Request, Response, NextFunction } from "../express.js"
 import * as settings from "../settings.js"
 
 export async function authenticate(req: Request, res: Response, next: NextFunction) {
