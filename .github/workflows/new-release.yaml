@@ -17,7 +17,7 @@ jobs:
         run: npm i
 
       - name: Read package.json
-        uses: dutscher/read-package-json-endpoint-actions@v1.33.7
+        uses: dutscher/read-package-json-endpoint-actions@v1.33
         id: package-json-endpoint
 
       - name: Create a release
