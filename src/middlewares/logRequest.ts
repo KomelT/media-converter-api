@@ -28,7 +28,6 @@ export async function logOutcommingRequest(req: Request, res: Response, next: Ne
     res.send = function (body: any) {
       const uuid = req.uuid
       if (!uuid) return originalSend.call(this, body)
-      console.log("Hej " + res.getHeader("content-length"))
       ;(async () => {
         await Req.updateOne(
           { _id: uuid },
