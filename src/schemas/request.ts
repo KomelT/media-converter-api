@@ -5,8 +5,6 @@ export interface IRequest extends Document {
   sourceIP: string
   requestMethod: string
   requestUrl: string
-  requestHeaders: object
-  requestBody: object
   apiKey: string
   uploadSize: number
   downloadSize: number
@@ -19,8 +17,6 @@ export const requestSchema = new Schema<IRequest>({
   sourceIP: String,
   requestMethod: String,
   requestUrl: String,
-  requestHeaders: Object,
-  requestBody: Object,
   apiKey: String,
   uploadSize: Number,
   downloadSize: Number,
