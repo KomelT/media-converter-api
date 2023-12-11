@@ -2,7 +2,7 @@ FROM node:18.17.0
 
 RUN apt-get update
 
-RUN apt-get install dcraw libraw-bin -y
+RUN apt-get install dcraw -y
 
 WORKDIR /var/app
 
