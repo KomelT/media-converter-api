@@ -4,6 +4,7 @@ import multer from "multer"
 declare global {
   namespace Express {
     export interface Request {
+      uuid?: string
       upload?: multer.Multer
     }
   }
