@@ -13,6 +13,7 @@ services:
   mongodb:
     restart: unless-stopped
     image: mongo:4
+    container_name: mongodb
     volumes:
       - mongodb_data:/data/db
     healthcheck:
@@ -25,6 +26,7 @@ services:
   mongopanel:
     restart: unless-stopped
     image: mongo-express
+    container_name: mongopanel
     environment:
       ME_CONFIG_MONGODB_PORT: 27017
       ME_CONFIG_MONGODB_SERVER: mongodb
