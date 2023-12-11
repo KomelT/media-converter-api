@@ -66,6 +66,7 @@ express.post("/api/photo", authenticate, upload.single("file"), async (req: Requ
         })
       }
       console.log(`- DONE \n`)
+      res.setHeader("content-length", info.size)
       return res.status(200).send(buffer)
     })
   } catch (e) {
