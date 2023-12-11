@@ -8,7 +8,7 @@ jobs:
 
     steps:
       - name: Update packages
-        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+        run: sudo apt-get update
 
       - name: Install dcraw and libraw
         run: sudo apt-get install -y dcraw libraw-bin
