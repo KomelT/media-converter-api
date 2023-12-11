@@ -1,5 +1,8 @@
 import Yaml from "yaml"
 
+if (!process.env.MONGO_CONNSTR) throw new Error("MONGO_CONNSTR environment variable is required!")
+export const MONGO_CONNSTR: string = process.env.MONGO_CONNSTR
+
 if (!process.env.AUTHORIZED_API_KEYS) throw new Error("AUTHORIZED_API_KEYS environment variable is required!")
 {
   const parsed = Yaml.parse(process.env.AUTHORIZED_API_KEYS)
