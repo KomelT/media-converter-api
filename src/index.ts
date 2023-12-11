@@ -9,6 +9,7 @@ console.log(`
 
 import "./exithandler.js"
 import "./settings.js"
+import "./mongodb.js"
 import "./http.js"
 import "./express.js"
 

@@ -11,3 +11,29 @@ services:
     volumes:
       - .:/var/app
       - /var/api/node_modules
+
+  mongodb:
+    restart: unless-stopped
+    image: mongo:4
+    volumes:
+      - mongodb_data:/data/db
+    healthcheck:
+      test: ["CMD", "echo", '''db.runCommand("ping").ok''', "|", "mongodb", "localhost:27017/test", "--quiet"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+
+  mongopanel:
+    restart: unless-stopped
+    image: mongo-express
+    environment:
+      ME_CONFIG_MONGODB_PORT: 27017
+      ME_CONFIG_MONGODB_SERVER: mongodb
+    ports:
+      - 8081:8081
+    depends_on:
+      - mongodb
+
+volumes:
+  mongodb_data:

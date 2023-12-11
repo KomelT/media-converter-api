@@ -44,6 +44,10 @@ docker compose up
 
 ## Changelog
 
+**1.0.1**
+
+- Added monitoring of incoming & outcommig traffic
+
 **1.0.0**
 
 - Added POST route /api/photo
